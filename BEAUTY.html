@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BEAUTY</title>
+  <style>
+    th{
+      height:100px;
+      font-size:40px;
+      text-align: center;
+    }
+    td{
+      text-align: center;
+      padding : 10px 20px;
+    }
+    @keyframes a {
+      from{font-size : 500%;}
+      to{font-size : 200%;}
+      0%{color:blue;}
+      50%{color:green;}
+      100%{color:red;}
+    }
+    h1{
+      animation-name:a;
+      animation-duration: 5s;
+      animation-iteration-count: 1;
+    }
+    table{
+      width:100%;
+    }
+  </style>
+  <script>
+    function createDIV() {
+      let obj = document.getElementById("parent");
+      let newDIV = document.createElement("div");
+      newDIV.innerHTML = "K뷰티(영어: K-Beauty)는 대한민국에서 제조된 화장품 제품의 포괄적인 용어이자 더 나아가 대한민국의 화장품 산업 자체를 의미한다." +
+        " K뷰티의 유행은 동아시아, 동남아시아, 남아시아, 미국과 같은 전 세계에서 인기를 끌었으며, 건강, 보습, 브라이트닝 효과에 중점을 둔다.";
+      newDIV.setAttribute("id", "myDiv");
+      newDIV.style.backgroundColor = "yellow";
+      newDIV.onclick = function() {
+        let p = this.parentElement; // 부모 HTML 태그 요소
+        p.removeChild(this); // 자신을 부모로부터 제거
+      };
+      obj.appendChild(newDIV);
+    }
+  </script>
+</head>
+<body id = "parent" style="background: aliceblue">
+<h1 style="text-align: center">&lt;BEAUTY&gt;</h1>
+<hr>
+<table style="background: mistyrose">
+  <thead>
+  <tr><th>k-beauty</th></tr>
+  </thead>
+  <tbody>
+  <tr><td><img src="images/beauty.PNG"></td></tr>
+  </tbody>
+</table>
+<p>
+  <a href = "javascript:createDIV()">k-beauty란?</a><p></p>
+</p>
+</body>
+</html>

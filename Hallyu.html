@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hallyu</title>
+  <style>
+    hr {border : 3px solid lightgray;}
+    #menubar{background : olive;}
+    #menubar ul{
+      width :100%;
+      text-align : left;
+    }
+    #menubar ul li{
+      display : inline-block;
+      list-style-type : none;
+      padding : 5px 25px;
+      text-align : left;
+
+    }
+    #menubar ul li a{
+      color : white;
+      text-decoration: none;
+      }
+    #menubar ul li a:hover{
+      color: violet;
+    }
+
+  </style>
+  <script>
+  function change1(){
+    let span1 = document.getElementById("red");
+    span1.style.color = "red";
+    span1.style.fontSize = "2em";
+    let span2 = document.getElementById("blue");
+    span2.style.color = "blue";
+    span2.style.fontSize = "2em";
+    alert("한류(韓流) : 한국민족문화대백과사전(한류(韓流))]한국의 대중문화 요소가 아시아를 중심으로 해외로 전파되어 인기리에 소비되는 문화현상.");
+  }
+  function query(){
+    let ret = confirm("이동하시겠습니까?");
+    return ret;
+  }
+  let timerID=null;
+  function startTimer(time) {
+    // 타이머 시작
+    timerID = setTimeout("load('images/trend.pdf')", time);
+
+    // 툴팁 메시지
+    document.getElementById("img").title = "타이머 작동 시작...";
+  }
+  function cancelTimer() {
+    if(timerID !=null)
+      clearTimeout(timerID); // 타이머 중단
+  }
+  function load(url) {
+    window.open(url); // 현재 윈도우에  url 사이트 로드
+  }
+  </script>
+</head>
+<body style="background: aliceblue">
+<h1 style = "text-align:center" onclick = "change1()" ><span id = "red">H A L </span> <span id = "blue">  L Y U</span></h1>
+<hr>
+<div>
+  <img src = "images/순위.PNG" width = 100% height="200">
+</div>
+<div>
+  <nav id = "menubar">
+    <ul>
+      <li style = "display: block; text-align: left; font-size:30px; font-weight: 900;">종류</li>
+      <li><a href="K-POP.html">1. K-POP</a></li>
+      <li><a href="DRAMA.html">2. 드라마</a></li>
+      <li><a href="MOVIE.html">3. 영화</a></li>
+      <li><a href="FOOD.html">4. 음식</a></li>
+      <li><a href="BEAUTY.html">5. 뷰티</a></li>
+      <li style = "display: block"></li>
+      <li style = "display: block; text-align: left; font-size:30px; font-weight: 900;">지역별 한류</li>
+      <li><a href="ASIA.html" onclick = "return query()">1. 아시아, 오세아니아</a></li>
+      <li><a href="AMERICAS.html" onclick = "return query()">2. 미주</a></li>
+      <li><a href="EUROPE.html" onclick = "return query()">3. 유럽</a></li>
+      <li><a href="AFRICA.html" onclick = "return query()">4. 아프리카</a></li>
+    </ul>
+  </nav>
+</div>
+<hr>
+<p>
+<img id ="img" src="images/hallyu.jpg" onmouseout="cancelTimer()" onmouseover="startTimer(3000)">
+  <br><br>이미지에 마우스를 올리고 3초간 그대로 있을 때 2022 한류 트렌드.pdf로 이동합니다.
+</p>
+</body>
+</html>

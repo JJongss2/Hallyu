@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DRAMA</title>
+  <style>
+    th{
+      height:100px;
+      font-size:40px;
+      text-align: center;
+    }
+    td{
+      text-align: center;
+      padding : 10px 20px;
+    }
+    @keyframes a {
+      from{font-size : 500%;}
+      to{font-size : 200%;}
+      0%{color:blue;}
+      50%{color:green;}
+      100%{color:red;}
+    }
+    h1{
+      animation-name:a;
+      animation-duration: 5s;
+      animation-iteration-count: 1;
+    }
+    table{
+      width:100%;
+    }
+  </style>
+  <script>
+    function createDIV() {
+      let obj = document.getElementById("parent");
+      let newDIV = document.createElement("div");
+      newDIV.innerHTML = "지난 1년간 한류는 오징어 게임이 견인했다고 해도 과언이 아니다. 오징어 게임은 2021년 9월 17일에 처음 공개된 이후 글로벌 OTT 콘텐츠 관련 모든 기록을 새로 썼다. " +
+        "2021년 10월 13일, 넷플릭스는 오징어게임이 역대 가장 많은 시청 가구수를 기록한 콘텐츠라고 발표했다. 28일 동안 1억 4,200만 가구가 오징어 게임을 시청했는데 " +
+        "이는 기존 최고 기록이었던 브리저튼의 8,200만 가구를 큰 차이로 뛰어넘은 수치고 역대 최초 1억 가구 시청 돌파 기록이기도 하다. 또한 넷플릭스가 홈페이지를 통해 공식적으로 콘텐츠별 시청 시간을 공개했는데," +
+        " 오징어 게임은 첫 28일 동안 약 16억 5,000만 시간의 누적 시청 시간을 기록했다. 이는 역대 1위 기록이며 2위인 기묘한 이야기 시즌 4와도 3억 시간 정도의 격차를 보인다.";
+      newDIV.setAttribute("id", "myDiv");
+      newDIV.style.backgroundColor = "yellow";
+      newDIV.onclick = function() {
+        let p = this.parentElement; // 부모 HTML 태그 요소
+        p.removeChild(this); // 자신을 부모로부터 제거
+      };
+      obj.appendChild(newDIV);
+    }
+  </script>
+</head>
+<body id = "parent" style="background: aliceblue">
+<h1 style="text-align: center">&lt;DRAMA&gt;</h1>
+<hr>
+<table style="background: mistyrose">
+  <thead>
+  <tr><th>최선호 한국 드라마</th><th>최선호 한국 배우</th></tr>
+  </thead>
+  <tbody>
+  <tr><td><img src="images/drama.PNG"></td><td><img src ="images/actor.PNG" ></td></tr>
+  </tbody>
+</table>
+<p>
+  <a href = "javascript:createDIV()">드라마 누적시간</a><p></p>
+</p>
+</body>
+</html>

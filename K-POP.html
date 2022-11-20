@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>K-POP</title>
+  <style>
+    th{
+      height:100px;
+      font-size:40px;
+      text-align: center;
+    }
+    td{
+      text-align: center;
+      padding : 10px 20px;
+    }
+    @keyframes a {
+      from{font-size : 500%;}
+      to{font-size : 200%;}
+      0%{color:blue;}
+      50%{color:green;}
+      100%{color:red;}
+    }
+    h1{
+      animation-name:a;
+      animation-duration: 5s;
+      animation-iteration-count: 1;
+    }
+    table{
+      width:100%;
+    }
+  </style>
+  <script>
+    function createDIV() {
+      let obj = document.getElementById("parent");
+      let newDIV = document.createElement("div");
+      newDIV.innerHTML = "음악 소비 패러다임이 음반에서 음원으로 전환된 지 20여년이 지나면서 음반 판매량은 대중성 측정 지표에서 팬덤 로열티 측정 지표로 바뀌었다. \n" +
+        "해외 팬들을 포함한 열성적 팬덤이 피지컬 앨범을 공동 구매하는 소비패턴은 이미 널리 알려져 있다. 개별 K-Pop 가수/그룹의 국내외 팬덤 크기와 충성도를 가늠할 수 있는 지표인 앨범 초동 순위를 살펴보면 \n" +
+        "상위 30위권 앨범 중 다섯 작품만 발매된 지 2년 이상 된 타이틀임을 알 수 있다. 개별 앨범 판매량도 최신 발매작일수록 더 높아지는 경향을 보이고 있는데, 상위 30위 중 총 열두 개의 타이틀이 올해(2022년) 발매된 앨범이다. \n" +
+        "데뷔 3년차인 에스파(aespa)가 최근 여성 그룹 최초로 남성 그룹의 전유물로 여겨졌던 초동 100만장을 돌파하며 아이브(IVE), 리사와 함께 여성 가수/그룹의 팬덤 충성도 역시 공고해지고 있음을 보여줬다.\n" +
+        "코로나19 엔데믹이 도래함에 따라 지난 2년간 중단됐던 K-Pop 가수들의 해외 공연도 재개되고 있어 K-Pop 팬덤은 더욱 단단해지고 확장될 것으로 보인다.(클릭하면 삭제)"
+      newDIV.setAttribute("id", "myDiv");
+      newDIV.style.backgroundColor = "yellow";
+      newDIV.onclick = function() {
+        let p = this.parentElement; // 부모 HTML 태그 요소
+        p.removeChild(this); // 자신을 부모로부터 제거
+      };
+      obj.appendChild(newDIV);
+    }
+  </script>
+</head>
+<body id = "parent" style="background: aliceblue">
+<h1 style="text-align: center">&lt;K-POP&gt;</h1>
+<hr>
+<table style="background: mistyrose">
+  <thead>
+  <tr><th>최선호 한국 가수 / 그룹</th><th>역대 앨범 초동 순위</th></tr>
+  </thead>
+  <tbody>
+  <tr><td><img src="images/singer.PNG"></td><td><img src ="images/sing.PNG" ></td></tr>
+  </tbody>
+</table>
+<p>
+  <a href = "javascript:createDIV()">k-pop 설명</a><p></p>
+</p>
+</body>
+</html>

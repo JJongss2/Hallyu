@@ -54,6 +54,33 @@
       };
       obj.appendChild(newDIV);
     }
+
+    function findChecked(){
+      let found = null;
+      let kactor = document.getElementsByName("actor");
+      for(let i = 0; i<kactor.length; i++){
+        if(kactor[i].checked == true){
+          found = kactor[i];
+        }
+      }
+      switch(found.value) {
+        case "이민호":
+          window.open("https://ko.wikipedia.org/wiki/%EC%9D%B4%EB%AF%BC%ED%98%B8_(1987%EB%85%84)");
+          break;
+        case "현빈":
+          window.open("https://ko.wikipedia.org/wiki/%ED%98%84%EB%B9%88");
+          break;
+        case "공유":
+          window.open("https://ko.wikipedia.org/wiki/%EA%B3%B5%EC%9C%A0_(%EB%B0%B0%EC%9A%B0)");
+          break;
+        case "송혜교":
+          window.open("https://ko.wikipedia.org/wiki/%EC%86%A1%ED%98%9C%EA%B5%90");
+          break;
+        case "송중기":
+          window.open("https://ko.wikipedia.org/wiki/%EC%86%A1%EC%A4%91%EA%B8%B0");
+          break;
+      }
+    }
   </script>
 </head>
 <body id = "parent" style="background: aliceblue">
@@ -64,9 +91,21 @@
   <tr><th>최선호 한국 드라마</th><th>최선호 한국 배우</th></tr>
   </thead>
   <tbody>
-  <tr><td><img src="images/drama.PNG"></td><td><img src ="images/actor.PNG" ></td></tr>
+  <tr><td><img src="images/drama.PNG" width="90%"></td><td><img src ="images/actor.PNG" width="90%" ></td></tr>
   </tbody>
 </table>
+<hr>
+<p style = "font: bold 30px Consolas, sans-serif;">선택된 배우의 프로필로 이동합니다.</p>
+<form>
+  <label><input type ="radio" name = "actor" value ="이민호">이민호</label>
+  <label><input type ="radio" name = "actor" value ="현빈">현빈</label>
+  <label><input type ="radio" name = "actor" value ="공유">공유</label>
+  <label><input type ="radio" name = "actor" value ="송혜교">송혜교</label>
+  <label><input type ="radio" name = "actor" value ="송중기">송중기</label>
+  <input type = "button" value = "GO" onclick = "findChecked()">
+</form>
+<br>
+<hr>
 <p>
   <a href = "javascript:createDIV()" style="font-size: 30px">드라마 누적시간 click! / </a> <a href="https://www.yna.co.kr/view/IIS20220914000002365" style="font-size: 30px"> 오징어게임 관련 뉴스 click!</a><p></p>
 </p>

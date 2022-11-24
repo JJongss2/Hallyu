@@ -28,6 +28,12 @@
     table{
       width:100%;
     }
+    a{
+      text-decoration: none;
+    }
+    a:hover{
+      color : orangered;
+    }
   </style>
   <script>
     function createDIV() {
@@ -46,6 +52,39 @@
       };
       obj.appendChild(newDIV);
     }
+
+    function findChecked(){
+      let found = null;
+      let ksinger = document.getElementsByName("singer");
+      for(let i = 0; i<ksinger.length; i++){
+        if(ksinger[i].checked == true){
+          found = ksinger[i];
+        }
+      }
+      switch(found.value) {
+        case "방탄소년단":
+          window.open("https://ko.wikipedia.org/wiki/%EB%B0%A9%ED%83%84%EC%86%8C%EB%85%84%EB%8B%A8");
+          break;
+        case "블랙핑크":
+          window.open("https://ko.wikipedia.org/wiki/%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC");
+          break;
+        case "아이유":
+          window.open("https://ko.wikipedia.org/wiki/%EC%95%84%EC%9D%B4%EC%9C%A0");
+          break;
+        case "리사":
+          window.open("https://ko.wikipedia.org/wiki/%EB%A6%AC%EC%82%AC_(%ED%83%9C%EA%B5%AD%EC%9D%98_%EA%B0%80%EC%88%98)");
+          break;
+        case "싸이":
+          window.open("https://ko.wikipedia.org/wiki/%EC%8B%B8%EC%9D%B4");
+          break;
+        case "트와이스":
+          window.open("https://ko.wikipedia.org/wiki/%ED%8A%B8%EC%99%80%EC%9D%B4%EC%8A%A4");
+          break;
+        case "엑소":
+          window.open("https://ko.wikipedia.org/wiki/EXO");
+          break;
+      }
+    }
   </script>
 </head>
 <body id = "parent" style="background: aliceblue">
@@ -56,9 +95,22 @@
   <tr><th>최선호 한국 가수 / 그룹</th><th>역대 앨범 초동 순위</th></tr>
   </thead>
   <tbody>
-  <tr><td><img src="images/singer.PNG"></td><td><img src ="images/sing.PNG" ></td></tr>
+  <tr><td><img src="images/singer.PNG" width="90%"></td><td><img src ="images/sing.PNG" width="90%" ></td></tr>
   </tbody>
 </table>
+<hr>
+<p style = "font: bold 30px Consolas, sans-serif;">선택된 가수(그룹)의 프로필로 이동합니다.</p>
+<form>
+  <label><input type ="radio" name = "singer" value ="방탄소년단">방탄소년단</label>
+  <label><input type ="radio" name = "singer" value ="블랙핑크">블랙핑크</label>
+  <label><input type ="radio" name = "singer" value ="아이유">아이유</label>
+  <label><input type ="radio" name = "singer" value ="리사">리사</label>
+  <label><input type ="radio" name = "singer" value ="싸이">싸이</label>
+  <label><input type ="radio" name = "singer" value ="엑소">엑소</label>
+
+  <input type = "button" value = "GO" onclick = "findChecked()">
+</form>
+<hr>
 <p>
   <a href = "javascript:createDIV()">k-pop 설명</a><p></p>
 </p>

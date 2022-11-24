@@ -28,6 +28,15 @@
     table{
       width:100%;
     }
+    a{
+      text-decoration: none;
+    }
+    a:hover{
+      color : orangered;
+    }
+    li{
+      margin-bottom : 10px;
+    }
   </style>
   <script>
     function createDIV() {
@@ -43,9 +52,50 @@
       };
       obj.appendChild(newDIV);
     }
+
+    let text = ["마스크 착용이 의무하되어 건조증, 홍조증, 염증 등의 마스크 착용 증후군 현상이 나타남", "스킨케어 루틴 단계를 줄여줄 뿐 아니라 제품을 운송하는 데 있어서 폐기물과 탄소 배출량을 줄이는데 기여",
+    "유자 : 기미, 색소침착 <br> 센델라 : 피부진정 <br> 쑥 : 진정과 항염 효과 <br>프로바이오틱스 : 건조, 염증 완화", "고객 경험을 최적화하기 위한<br>일련의 맞춤형 솔루션을 제공"]
+    let commentDiv;
+
+    function init() {
+      commentDiv = document.getElementById("commentDiv");
+
+      let liArray = document.getElementsByTagName("li");
+      for(let i=0; i<liArray.length; i++) {
+        liArray[i].addEventListener("mouseover", over, false);
+        liArray[i].addEventListener("mouseout", hideCommentDiv, false);
+      }
+    }
+
+    function over(e) {
+      let n=0;
+      switch(e.target.id) {
+        case "l0" : n = 0; break;
+        case "l1" : n = 1; break;
+        case "l2" : n = 2; break;
+        case "l3" : n = 3; break;
+      }
+      setCommentDiv(text[n], e);
+    }
+
+    function setCommentDiv(comment, e) {
+      commentDiv.innerHTML = comment;
+      commentDiv.style.left = e.clientX + "px";
+      commentDiv.style.top = e.clientY + "px";
+      commentDiv.style.border = "1px solid yellowgreen";
+      commentDiv.style.background = "lightblue";
+      commentDiv.style.visibility = "visible";
+      commentDiv.style.width = "250px";
+      commentDiv.style.height = "90px";
+    }
+
+    function hideCommentDiv() {
+      commentDiv.style.visibility = "hidden";
+    }
+
   </script>
 </head>
-<body id = "parent" style="background: aliceblue">
+<body id = "parent" style="background: aliceblue" onload="init()">
 <h1 style="text-align: center">&lt;BEAUTY&gt;</h1>
 <hr>
 <table style="background: mistyrose">
@@ -53,9 +103,22 @@
   <tr><th>k-beauty</th></tr>
   </thead>
   <tbody>
-  <tr><td><img src="images/beauty.PNG"></td></tr>
+  <tr><td><img src="images/beauty.PNG" width="60%" height="50%"></td></tr>
   </tbody>
 </table>
+<hr>
+<div>
+  <div style = "font:bold 30px Consolas, sans-serif;">k-beauty 트렌드</div>
+  <ul>
+    <li id = l0>스킨케어 피부 트러블 진정</li>
+    <li id = l1>스킵케어 트렌드 확산</li>
+    <li id = l2>최신 유행 성분(유자, 센텔라, 쑥, 프로바이오틱스 인삼)</li>
+    <li id = l3>네일, 아이, 인공지능 기술</li>
+  </ul>
+  <div id="commentDiv" style="position: absolute; left: 51px; top: 236px;
+  border: 1px solid yellowgreen; background: aliceblue; visibility: hidden; width: 200px; height: 80px;"></div>
+</div>
+<hr>
 <p>
   <a href = "javascript:createDIV()">k-beauty란?</a><p></p>
 </p>
